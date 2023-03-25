@@ -37,7 +37,6 @@ users {
 	name STRING
 	phone STRING
 	email STRING
-	confirmed BOOL
 	password_hash STRING
 }
 
@@ -50,7 +49,6 @@ stations {
 	longitude DOUBLE
 	basin UUID
 	user_responsible UUID
-	verified BOOL
 }
 ```
 
