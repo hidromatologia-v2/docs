@@ -34,6 +34,10 @@
 
 ## Stations
 
+### Authentication
+
+<img src="assets/image-20230416172417324.png" alt="image-20230416172417324" style="zoom:50%;" />
+
 ### Sensors
 
 <img src="assets/image-20230416163520962.png" alt="image-20230416163520962" style="zoom:50%;" />
