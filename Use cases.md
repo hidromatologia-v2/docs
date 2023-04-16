@@ -50,6 +50,10 @@
 
 ## Admin
 
+### Authentication
+
+<img src="assets/image-20230416170303791.png" alt="image-20230416170303791" style="zoom:50%;" />
+
 ### Users
 
 <img src="assets/image-20230416164705176.png" alt="image-20230416164705176" style="zoom:50%;" />
