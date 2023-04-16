@@ -7,37 +7,17 @@ This document describes the relation database used in the entire system.
 ```mermaid
 erDiagram
 
-countries {
-	uuid UUID
-	name STRING
-}
-
-regions {
-	uuid UUID
-	country UUID
-	name STRING
-}
-
-basins {
-	uuid UUID
-	region UUID
-	name STRING
-}
-```
-
-```mermaid
-erDiagram
-
 users {
 	uuid UUID
 	created TIMESTAMP
 	updated TIMESTAMP
 	deleted TIMESTAMP
 	username STRING
+	password_hash STRING
 	name STRING
 	phone STRING
 	email STRING
-	password_hash STRING
+	confirmed BOOL
 }
 
 stations {
@@ -45,10 +25,14 @@ stations {
 	created TIMESTAMP
 	updated TIMESTAMP
 	deleted TIMESTAMP
+	user_uuid UUID
+	name STRING
+	description STRING
+	country INT
+	subdivision STRING
 	latitude DOUBLE
 	longitude DOUBLE
-	basin UUID
-	user_responsible UUID
+	api_key STRING
 }
 ```
 
@@ -60,8 +44,8 @@ sensors {
 	created TIMESTAMP
 	updated TIMESTAMP
 	deleted TIMESTAMP
-	station UUID
-	type INT
+	station_uuid UUID
+	type STRING
 }
 
 sensor_registries {
@@ -69,7 +53,7 @@ sensor_registries {
 	created TIMESTAMP
 	updated TIMESTAMP
 	deleted TIMESTAMP
-	sensor UUID
+	sensor_uuid UUID
 	value DOUBLE
 }
 ```
@@ -77,50 +61,27 @@ sensor_registries {
 ```mermaid
 erDiagram
 
-alarms {
+alert {
 	uuid UUID
 	created TIMESTAMP
 	updated TIMESTAMP
 	deleted TIMESTAMP
+	user_uuid UUID
 	name STRING
-	user UUID
-	sensor UUID
+	sensor_uuid UUID
 	condition INT
 	value DOUBLE
-}
-
-stations_api_keys {
-	uuid UUID
-	created TIMESTAMP
-	updated TIMESTAMP
-	deleted TIMESTAMP
-	key STRING
-	station UUID
 }
 ```
 
 ## Relations
 
-### Stations organization
-
 ```mermaid
 erDiagram
-
-countries ||--o{ regions: "Has many"
-regions ||--o{ basins: "Has many"
-basins ||--o{ stations: "Has many"
 
 users ||--o{ stations: "Has many"
 stations ||--|{ sensors: "Has many"
 sensors ||--o{ sensor_registries: "Has many"
-
-stations ||--o{ stations_api_keys: "Has many"
-```
-
-### Alarms
-
-```mermaid
-erDiagram
 
 users ||--o{ alarms: "Has many"
 alarms ||--|| sensors: "Has one"
