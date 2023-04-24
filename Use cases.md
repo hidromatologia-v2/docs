@@ -32,6 +32,10 @@
 
 <img src="assets/image-20230416162541091.png" alt="image-20230416162541091" style="zoom:50%;" />
 
+### Password
+
+<img src="assets/image-20230424120039922.png" alt="image-20230424120039922" style="zoom:50%;" />
+
 ## Stations
 
 ### Authentication
@@ -73,3 +77,7 @@
 ### Admin
 
 <img src="assets/image-20230416165133981.png" alt="image-20230416165133981" style="zoom:50%;" />
+
+### Password
+
+<img src="assets/image-20230424120140402.png" alt="image-20230424120140402" style="zoom:50%;" />
