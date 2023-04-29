@@ -2,7 +2,9 @@
 
 This document describes the relation database used in the entire system.
 
-## Tables
+## Stations
+
+### Tables
 
 ```mermaid
 erDiagram
@@ -74,7 +76,7 @@ alert {
 }
 ```
 
-## Relations
+### Relations
 
 ```mermaid
 erDiagram
@@ -87,15 +89,15 @@ users ||--o{ alarms: "Has many"
 alarms ||--|| sensors: "Has one"
 ```
 
-## Table rows and their Types
+### Table rows and their Types
 
-### Sensors
+#### Sensors
 
 | Type | Number |
 | ---- | ------ |
 |      |        |
 
-### Conditions
+#### Conditions
 
 | Type | Number |
 | ---- | ------ |
@@ -103,4 +105,23 @@ alarms ||--|| sensors: "Has one"
 | `>`  | 1      |
 | `<=` | 2      |
 | `>=` | 3      |
+
+## Messaging
+
+### Tables
+
+```mermaid
+erDiagram
+
+messages {
+	uuid UUID
+	created TIMESTAMP
+	updated TIMESTAMP
+	deleted TIMESTAMP
+	type	STRING
+	recipient STRING
+	subject STRING
+	body STRING
+}
+```
 
